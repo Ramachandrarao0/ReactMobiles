@@ -4,7 +4,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ZAllData } from '../Data/ZAllData';
-import { Typography } from '@mui/material';
+import Navbrand from '../Components/Navbrand';
 
 
 
@@ -53,29 +53,7 @@ function ProductDetails() {
                     <Col xs={8} sm={9} md={10} lg={10}>
                         <div className='bg-dark text-light d-flex justify-content-between'>
                             {/* <h3>Product Details</h3> */}
-                            <Typography
-                                variant="h3"
-                                component="h3"
-                                sx={{
-                                    fontSize: '1rem',
-                                    letterSpacing: '2px',
-                                    textTransform: 'uppercase',
-                                    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-                                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.1)',
-                                    padding: '10px 20px',
-                                    background: 'linear-gradient(135deg, #007BFF, #00CFFF)',
-                                    borderRadius: '5px',
-                                    color: 'white',
-                                    transition: 'all 0.3s ease-in-out',
-                                    '&:hover': {
-                                        background: 'linear-gradient(135deg, #00CFFF, #007BFF)',
-                                        transform: 'scale(1.05)',
-                                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
-                                    },
-                                }}
-                            >
-                                MobileVista
-                            </Typography>
+
                             <Link to='/cart'><p>Cart</p></Link>
                         </div>
                         <Row className='border align-items-center p-2'>
@@ -96,7 +74,10 @@ function ProductDetails() {
                 <Sidenav />
 
                 <Col xs={8} sm={9} md={10} lg={10}>
-                    <div className='bg-dark text-light d-flex justifyContent-between'><h3>Product Details</h3> <Link to='/cart'><p>Cart</p></Link></div>
+                    <div className='bg-dark text-light d-flex justifyContent-between'>
+                        {/* <h3>Product Details</h3>  */}
+                        <Navbrand/>
+                        <Link to='/cart'><p style={{margin:'4px 0 2px 100px'}}>Cart</p></Link></div>
                     <Row className='border align-items-center p-2'>
                         <Col xs={12} sm={6} md={4} lg={4} className='mb-2'>
                             <img src={Details.url} style={{ height: 'auto', justifyContent: 'between', width: '80%', maxWidth: '100%' }} alt={Details.name} />
@@ -120,7 +101,7 @@ function ProductDetails() {
                             <p><strong>Offer:</strong> {Details.offer}</p>
                             <br />
                             <p><strong style={{ color: 'blue' }}>Price: ₹{Details.price}</strong> <span style={{ textDecoration: 'line-through', color: 'red' }}>₹{Details.originalPrice}</span> <strong>{Details.discount}% off</strong></p>
-                            <button className='btn btn-primary' onClick={addCart}>Add to cart</button>
+                            <button className='btn btn-info' onClick={addCart}>Add to cart</button>
                         </Col>
                     </Row>
                 </Col>

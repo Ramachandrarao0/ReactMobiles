@@ -17,6 +17,7 @@ import SamsungView from './ViewData/SamsungView';
 import VivoView from './ViewData/VivoView';
 import ProductDetails from './Pages/ProductDetails';
 import Cart from './Modules/Cart';
+import Slice from './ViewData/SliceView/Slice';
 
 
 
@@ -25,14 +26,15 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-
           <Route path='/' element={<Login/>} />
           <Route path='/signup'element={<Signup/>}/>
           <Route path = '/dashboard' element= {<Dashbord/>}/>
           <Route path = '/maindash' element = {<MainDash/>}/>
-
+          <Route path='/details' element={<ProductDetails/>} />
+          <Route path='/cart' element={<Cart/>} />
+          
           <Route path='/apple' element= {<AppleView/>}/>
-          <Route path='/apple' element= {<ProductDetails/>}/>
+          <Route path='/apple/:id' element= {<ProductDetails/>}/>
 
           <Route path='/iqoo' element = {<IqooView/>}/>
           <Route path='/iqoo/:id' element={<ProductDetails/>} />
@@ -57,9 +59,6 @@ const App = () => {
 
           <Route path='/vivo' element={<VivoView/>}/>
           <Route path='/vivo/:id' element={<ProductDetails/>}/>
-
-          <Route path='/details' element={<ProductDetails/>} />
-          <Route path='/cart' element={<Cart/>} />
           
           
         </Routes>

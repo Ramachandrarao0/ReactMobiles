@@ -12,15 +12,16 @@ import RelmeSlice from '../ViewData/SliceView/RelmeSlice';
 import OnePulseSlice from '../ViewData/SliceView/OnePulseSlice';
 import DasCarousel from './Carousel';
 
+
 function ContaintNav() {
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
         <>
-          <Navbar.Brand href="#">Main Dashbord</Navbar.Brand>
+         
         </>
       </Navbar>
-      <DasCarousel/>
+      <DasCarousel />
 
       <SamsungSlice />
       <AppleSlice />
