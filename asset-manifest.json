@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ReactMobiles/static/css/main.3f4a6211.css",
-    "main.js": "/ReactMobiles/static/js/main.e8facb3d.js",
+    "main.js": "/ReactMobiles/static/js/main.a891e3fc.js",
     "static/js/488.83e06145.chunk.js": "/ReactMobiles/static/js/488.83e06145.chunk.js",
     "static/media/Motorola.mp4": "/ReactMobiles/static/media/Motorola.97bb1f05b968cb3499e0.mp4",
     "static/media/Apple.mp4": "/ReactMobiles/static/media/Apple.5338dd55179ad6ebd65f.mp4",
@@ -15,11 +15,11 @@
     "static/media/mobileLogo.png": "/ReactMobiles/static/media/mobileLogo.cbb2328df96151c9b9c1.png",
     "index.html": "/ReactMobiles/index.html",
     "main.3f4a6211.css.map": "/ReactMobiles/static/css/main.3f4a6211.css.map",
-    "main.e8facb3d.js.map": "/ReactMobiles/static/js/main.e8facb3d.js.map",
+    "main.a891e3fc.js.map": "/ReactMobiles/static/js/main.a891e3fc.js.map",
     "488.83e06145.chunk.js.map": "/ReactMobiles/static/js/488.83e06145.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f4a6211.css",
-    "static/js/main.e8facb3d.js"
+    "static/js/main.a891e3fc.js"
   ]
 }
