@@ -1,4 +1,5 @@
 import React from 'react';
+import { Alert } from "react-bootstrap";
 import Sidenav from '../Components/Sidenav';
 import { Row, Col, Container } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
@@ -15,6 +16,7 @@ function ProductDetails() {
     let Details = ZAllData.find((e) => e.id === id);
 
     const [cart, setCart] = useState([]);
+    const [message, setMessage] = useState("");
     console.log("Product Details:", Details);
 
 
@@ -38,12 +40,34 @@ function ProductDetails() {
             id: Details.id
         };
 
-        // Add product to cart
-        const updatedCart = [...cart, product];
-        setCart(updatedCart);
-        localStorage.setItem('cartItem', JSON.stringify(updatedCart));
+        const storedCart = localStorage.getItem("cartItem");
+        let cart = storedCart ? JSON.parse(storedCart) : [];
 
-        alert(`${Details.name} added to cart!`);
+        const existingItem = cart.find((item) => item.id === product.id);
+
+        if (existingItem) {
+            existingItem.quantity += 1; 
+        } else {
+            cart.push({ ...product, quantity: 1 }); 
+        }
+
+        setCart(cart);
+        localStorage.setItem("cartItem", JSON.stringify(cart));
+
+        setMessage(`${Details.name} added to cart!`);
+
+        setTimeout(() => setMessage(""), 3000);
+
+
+        // Add product to cart
+        // const updatedCart = [...cart, product];
+        // setCart(updatedCart);
+        // localStorage.setItem('cartItem', JSON.stringify(updatedCart));
+
+        // alert(`${Details.name} added to cart!`);
+
+
+
     };
     if (!Details) {
         return (
@@ -78,6 +102,13 @@ function ProductDetails() {
                         {/* <h3>Product Details</h3>  */}
                         <Navbrand/>
                         <Link to='/cart'><p style={{margin:'4px 0 2px 100px'}}>Cart</p></Link></div>
+                        
+                        {message && (
+                        <Alert variant="success" className="position-fixed top-0 end-0 m-3">
+                            {message}
+                        </Alert>
+                    )}
+
                     <Row className='border align-items-center p-2'>
                         <Col xs={12} sm={6} md={4} lg={4} className='mb-2'>
                             <img src={Details.url} style={{ height: 'auto', justifyContent: 'between', width: '80%', maxWidth: '100%' }} alt={Details.name} />

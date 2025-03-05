@@ -100,7 +100,7 @@ const Sidenav = () => {
 
 
         <div className="text-center">
-          <Link to="/" className="text-decoration-none text-danger">
+          <Link to="/ReactMobiles" className="text-decoration-none text-danger">
             <i className="bi-box-arrow-left me-2"></i>
             {isOpen && <span>Sign Out</span>}
           </Link>

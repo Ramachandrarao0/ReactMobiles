@@ -18,6 +18,7 @@ import VivoView from './ViewData/VivoView';
 import ProductDetails from './Pages/ProductDetails';
 import Cart from './Modules/Cart';
 import Slice from './ViewData/SliceView/Slice';
+import PageNotFound from './Pages/PageNotFound';
 
 
 
@@ -26,12 +27,13 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route path='/' element={<Login/>} />
+          <Route path='ReactMobiles' element={<Login/>} />
           <Route path='/signup'element={<Signup/>}/>
           <Route path = '/dashboard' element= {<Dashbord/>}/>
           <Route path = '/maindash' element = {<MainDash/>}/>
           <Route path='/details' element={<ProductDetails/>} />
           <Route path='/cart' element={<Cart/>} />
+          <Route path="*" element={<PageNotFound />} />
           
           <Route path='/apple' element= {<AppleView/>}/>
           <Route path='/apple/:id' element= {<ProductDetails/>}/>
