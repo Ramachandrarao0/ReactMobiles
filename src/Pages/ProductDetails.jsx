@@ -1,11 +1,13 @@
 import React from 'react';
 import { Alert } from "react-bootstrap";
 import Sidenav from '../Components/Sidenav';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ZAllData } from '../Data/ZAllData';
 import Navbrand from '../Components/Navbrand';
+import emptyCartImage from '../Asserts/Photos/emptyCart.png';
+
 
 
 function ProductDetails() {
@@ -31,6 +33,9 @@ function ProductDetails() {
     const addCart = () => {
         const product = {
             name: Details.name,
+            ram: Details.ram,
+            originalPrice: Details.originalPrice,
+            discount: Details.discount,
             price: Details.price,
             url: Details.url,
             rating: Details.rating,
@@ -43,9 +48,9 @@ function ProductDetails() {
         const existingItem = cart.find((item) => item.id === product.id);
 
         if (existingItem) {
-            existingItem.quantity += 1; 
+            existingItem.quantity += 1;
         } else {
-            cart.push({ ...product, quantity: 1 }); 
+            cart.push({ ...product, quantity: 1 });
         }
 
         setCart(cart);
@@ -62,14 +67,24 @@ function ProductDetails() {
                 <Row className='p-0'>
                     <Sidenav />
                     <Col xs={8} sm={9} md={10} lg={10}>
-                        <div className='bg-dark text-light d-flex justify-content-between'>
-                            {/* <h3>Product Details</h3> */}
-
-                            <Link to='/cart'><p>Cart</p></Link>
-                        </div>
+                        <div className='bg-dark text-light d-flex justifyContent-between'>
+                            {/* <h3>Product Details</h3>  */}
+                            <Navbrand />
+                            <Link to='/cart'><p style={{ margin: '4px 0 2px 100px' }}>Cart</p></Link></div>
                         <Row className='border align-items-center p-2'>
                             <Col>
-                                <p>Product not found!</p>
+                                <div style={{ height: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                                    <div style={{ maxWidth: '500px', width: '100%' }}>
+                                        <img src={emptyCartImage} alt="Empty Cart" style={{ width: '100%', maxHeight: '300px', objectFit: 'contain', marginBottom: '20px' }} />
+                                        <h3>Product not found!</h3>
+                                        <p>Looks like the product your searching is not available anymore</p>
+                                        <Link to="/dashboard">
+                                            <Button variant="danger" size="lg">
+                                                Go back to products
+                                            </Button>
+                                        </Link>
+                                    </div>
+                                </div>
                             </Col>
                         </Row>
                     </Col>
@@ -86,11 +101,11 @@ function ProductDetails() {
 
                 <Col xs={8} sm={9} md={10} lg={10}>
                     <div className='bg-dark text-light d-flex justifyContent-between'>
-                        {/* <h3>Product Details</h3>  */}
-                        <Navbrand/>
-                        <Link to='/cart'><p style={{margin:'4px 0 2px 100px'}}>Cart</p></Link></div>
-                        
-                        {message && (
+                        <Navbrand />
+                        <Link to='/cart'><p style={{ margin: '4px 0 2px 100px' }}>Cart</p></Link>
+                    </div>
+
+                    {message && (
                         <Alert variant="success" className="position-fixed top-0 end-0 m-3">
                             {message}
                         </Alert>

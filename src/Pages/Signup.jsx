@@ -22,7 +22,7 @@ const Signup = () => {
                 <input type="nuber" className='form-control'/>
                 <label htmlFor="">Password</label>
                 <input type="password" className='form-control'/><br />
-                <Link to='/'><input type="button"  className=' btn btn-outline-primary ' value='Signup'/></Link>
+                <Link to='/ReactMobiles'><input type="button"  className=' btn btn-outline-primary ' value='Signup'/></Link>
                 
             </form>
             

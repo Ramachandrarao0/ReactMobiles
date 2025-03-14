@@ -38,8 +38,8 @@ function Slice({ data, imgHeight = '240px', seeAllText = 'See All', linkTo }) {
                   <img src={e.url} style={{ height: imgHeight, maxWidth: '100%', margin: 'auto' }} alt={e.name} />
                   <p>{e.name}</p>
                   <p>{e.title}</p>
-                  <p><b>{e.price || e.originalPrice}</b> / {e.discount}% off</p>
-                </Link>
+                  <p><b>₹{e.price}</b> / <span style={{ textDecoration: 'line-through',  }}>₹{e.originalPrice}</span>/ {e.discount}% off</p>
+                  <p><strong className='bg-success  text-light border'>{e.rating} ★</strong>  ({e.reviews} Reviews)</p>                </Link>
               </div>
             ))}
             <Link to={linkTo} className="btn btn-dark align-items-center" style={{  //flex:`1 1 calc(${100 / cardsToShow}% -10px)`, maxWidth:`calc(${100 / cardsToShow}% -10px)`,
