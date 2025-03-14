@@ -55,33 +55,3 @@ function Slice({ data, imgHeight = '240px', seeAllText = 'See All', linkTo }) {
 }
 
 export default Slice;
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import { Col, Row } from 'react-bootstrap';
-
-// function Slice({ data, imgHeight = '240px', seeAllText = 'See All', linkTo }) {
-//   return (
-//     <>
-//       <Col className='w-100'>
-//         <Row className="p-2" style={{ textDecoration: 'none', gap: '5px' }}>
-//           {data.slice(0, 4).map((e, index) => (
-//             <Col key={index} xs={4}  md={2}  className="d-grid border p-2">
-//               <img src={e.url} style={{ height: imgHeight, maxWidth: '100%', margin: 'auto' }} alt={e.name} />
-//               <p>{e.name}</p>
-//               <p>{e.title}</p>
-//               <p><b>{e.price || e.originalPrice}</b> / {e.discount}% off</p>
-//             </Col>
-//           ))}
-//           <Col xs={6} md={2}  className="d-flex align-items-center justify-content-center">
-//             <Link to={linkTo} className="btn btn-dark w-100">
-//               {seeAllText}
-//             </Link>
-//           </Col>
-//         </Row>
-//       </Col>
-//     </>
-//   );
-// }
-
-// export default Slice;

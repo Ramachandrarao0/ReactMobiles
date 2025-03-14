@@ -8,9 +8,6 @@ import { ZAllData } from '../Data/ZAllData';
 import Navbrand from '../Components/Navbrand';
 
 
-
-
-
 function ProductDetails() {
     const { id } = useParams();
     let Details = ZAllData.find((e) => e.id === id);
@@ -57,16 +54,6 @@ function ProductDetails() {
         setMessage(`${Details.name} added to cart!`);
 
         setTimeout(() => setMessage(""), 3000);
-
-
-        // Add product to cart
-        // const updatedCart = [...cart, product];
-        // setCart(updatedCart);
-        // localStorage.setItem('cartItem', JSON.stringify(updatedCart));
-
-        // alert(`${Details.name} added to cart!`);
-
-
 
     };
     if (!Details) {
